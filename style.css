@@ -12,20 +12,18 @@ body {
   /* secondary: rgb(241, 156, 121); */
 }
 
-footer {
-  background-color: rgb(164, 74, 63);
-  padding: 20px;
-  text-align: center;
-  color: white;
-}
-
 nav {
-  background-color: rgb(164, 74, 63);
+  background-color: rgba(164, 74, 63, 0.9);
   display: flex;
   align-items: center;
   justify-content: space-between;
   color: white;
   padding: 0 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
 }
 nav .branding {
 }
@@ -43,6 +41,7 @@ nav a {
   position: relative;
   color: white;
   text-align: center;
+  padding: 0 20px;
 
   display: flex;
   flex-direction: column;
@@ -78,4 +77,64 @@ nav a {
   max-width: 700px;
   margin-top: 20px;
   line-height: 2rem;
+}
+
+#project {
+  /* background: rgb(241, 156, 121); */
+  text-align: center;
+}
+#project h2 {
+  margin: 0;
+  padding: 30px;
+  font-size: 30px;
+}
+
+#project .project-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 850px;
+  margin: 0px auto 0;
+}
+#project img {
+  max-width: 100%;
+}
+#project .project {
+  max-width: 250;
+  margin: 10px;
+}
+
+#contact {
+  text-align: center;
+  background: rgb(241, 156, 121);
+  padding: 30px 20px;
+  color: white;
+}
+#contact h2 {
+  margin: 0;
+}
+
+#contact ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+}
+#contact ul a {
+  color: white;
+  font-size: 30px;
+  text-decoration: none;
+  padding: 10px;
+}
+
+footer {
+  background-color: rgb(164, 74, 63);
+  padding: 20px;
+  text-align: center;
+  color: white;
+}
+footer i {
+  color: red;
+  margin: 0 5px;
 }
