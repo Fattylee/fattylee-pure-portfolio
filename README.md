@@ -14,10 +14,10 @@ Experienced Software Engineer with a demonstrated history of working in the info
 
 Below are the features of my Fattylee-web-services app
 
-User should be able to view most recent project
-User should be able to link to the production app
-User should be able to have a direct link to the github page of each project
-User should be able to contact the developer via social links, email and phone
+User should be able to view most recent project<br/>
+User should be able to link to the production app<br/>
+User should be able to have a direct link to the github page of each project<br/>
+User should be able to contact the developer via social links, email and phone<br/>
 
 ## Technologies and Languages
 
