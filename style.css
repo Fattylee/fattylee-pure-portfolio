@@ -25,9 +25,6 @@ nav {
   right: 0;
   z-index: 100;
 }
-nav .branding {
-  /*  */
-}
 nav a {
   margin-left: 15px;
   color: white;
@@ -172,4 +169,10 @@ footer {
 footer i {
   color: red;
   margin: 0 5px;
+}
+
+@media screen and (max-width: 539px) {
+  #project .project {
+    max-width: 80%;
+  }
 }
