@@ -97,7 +97,6 @@ nav a:hover::after {
 }
 
 #project {
-  /* background: rgb(241, 156, 121); */
   text-align: center;
 }
 #project h2 {
@@ -122,7 +121,33 @@ nav a:hover::after {
   transition: transform 0.3s ease;
   text-decoration: none;
   color: black;
+  position: relative;
+  transform: scale(1);
 }
+
+.project a {
+  color: black;
+  text-decoration: none;
+}
+a.link-to-github {
+  color: white;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 15%;
+  height: 15%;
+  background-color: rgba(164, 74, 63, 0.9);
+  border-bottom-left-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: -2px 3px 3px rgba(0, 0, 0, 0.8);
+}
+
+a.link-to-github:hover {
+  background-color: grey;
+}
+
 #project .project:hover {
   transform: scale(1.1);
 }
