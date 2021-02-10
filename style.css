@@ -51,6 +51,7 @@ nav a:hover::after {
 }
 
 #about {
+  margin-top: 52px;
   height: 100vh;
   background-image: url(./header-bg.jpg);
   background-size: cover;
@@ -101,7 +102,7 @@ nav a:hover::after {
 }
 #project h2 {
   margin: 0;
-  padding: 30px;
+  padding: 52px;
   font-size: 30px;
 }
 
@@ -109,20 +110,22 @@ nav a:hover::after {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  max-width: 850px;
+  max-width: 900px;
   margin: 0px auto 0;
+  padding: 0 40px;
 }
 #project img {
-  max-width: 100%;
+  width: 100%;
 }
 #project .project {
-  max-width: 250;
+  width: 250px;
   margin: 10px;
   transition: transform 0.3s ease;
   text-decoration: none;
   color: black;
   position: relative;
   transform: scale(1);
+  flex-grow: 1;
 }
 
 .project a {
@@ -131,7 +134,7 @@ nav a:hover::after {
 }
 a.link-to-github {
   color: white;
-  position: fixed;
+  position: absolute;
   top: 0;
   right: 0;
   width: 15%;
@@ -199,5 +202,9 @@ footer i {
 @media screen and (max-width: 539px) {
   #project .project {
     max-width: 80%;
+  }
+
+  #project .project-container {
+    padding: 0;
   }
 }
