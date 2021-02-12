@@ -4,6 +4,9 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
 body {
   font-family: "Lato", Arial, Helvetica, sans-serif;
   background-color: rgb(246, 244, 210);
@@ -51,7 +54,6 @@ nav a:hover::after {
 }
 
 #about {
-  margin-top: 52px;
   height: 100vh;
   background-image: url(./header-bg.jpg);
   background-size: cover;
