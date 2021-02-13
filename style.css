@@ -132,7 +132,7 @@ nav a:hover::after {
 #project .project:hover {
   filter: blur(0px);
   transform: scale(1.1);
-  box-shadow: 0 0 12px rgba(0, 0, 0, 0.8);
+  box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.8), -2px -2px 12px rgba(0, 0, 0, 0.8);
 }
 #project .project {
   width: 250px;
