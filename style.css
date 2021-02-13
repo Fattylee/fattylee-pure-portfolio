@@ -217,7 +217,18 @@ footer i {
     max-width: 80%;
   }
 
+  /* start remove blur effect */
   #project .project-container {
     padding: 0;
   }
+  .project-container:hover .project {
+    filter: none;
+    transform: none;
+  }
+  #project .project:hover {
+    filter: none;
+    transform: none;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.8);
+  }
+  /* end remove blur effect */
 }
