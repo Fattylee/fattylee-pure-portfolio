@@ -109,7 +109,8 @@ nav a:hover::after {
   margin: 0;
   padding-top: 52px;
   padding-bottom: 20px;
-  font-size: 30px;
+  font-size: 45px;
+  text-shadow: 1px 1px 0 #e7eef1, 3px 3px 0px rgba(0, 0, 0, 0.1);
 }
 
 #project .project-container {
