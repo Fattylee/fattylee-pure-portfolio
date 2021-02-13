@@ -27,6 +27,8 @@ nav {
   left: 0;
   right: 0;
   z-index: 100;
+
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
 }
 nav a {
   margin-left: 15px;
@@ -101,10 +103,12 @@ nav a:hover::after {
 
 #project {
   text-align: center;
+  margin-bottom: 20px;
 }
 #project h2 {
   margin: 0;
-  padding: 52px;
+  padding-top: 52px;
+  padding-bottom: 20px;
   font-size: 30px;
 }
 
@@ -115,9 +119,20 @@ nav a:hover::after {
   max-width: 900px;
   margin: 0px auto 0;
   padding: 0 40px;
+  transition: filter 0.3s linear, transform 0.3s linear;
+}
+
+.project-container:hover .project {
+  filter: blur(4px);
+  transform: scale(0.9);
 }
 #project img {
   width: 100%;
+}
+#project .project:hover {
+  filter: blur(0px);
+  transform: scale(1.1);
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.8);
 }
 #project .project {
   width: 250px;
@@ -126,8 +141,8 @@ nav a:hover::after {
   text-decoration: none;
   color: black;
   position: relative;
-  transform: scale(1);
   flex-grow: 1;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.8);
 }
 
 .project a {
@@ -151,10 +166,6 @@ a.link-to-github {
 
 a.link-to-github:hover {
   background-color: grey;
-}
-
-#project .project:hover {
-  transform: scale(1.1);
 }
 
 #contact {
