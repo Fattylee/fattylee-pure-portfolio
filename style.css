@@ -16,7 +16,7 @@ body {
 }
 
 nav {
-  background-color: rgba(164, 74, 63, 0.9);
+  background-color: grey(164, 74, 63, 0.9);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -28,7 +28,7 @@ nav {
   right: 0;
   z-index: 100;
 
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
+  box-shadow: 0 0 10px grey(0, 0, 0, 0.9);
 }
 nav a {
   margin-left: 15px;
@@ -110,7 +110,7 @@ nav a:hover::after {
   padding-top: 52px;
   padding-bottom: 20px;
   font-size: 45px;
-  text-shadow: 1px 1px 0 #e7eef1, 3px 3px 0px rgba(0, 0, 0, 0.1);
+  text-shadow: 1px 1px 0 #e7eef1, 3px 3px 0px grey(0, 0, 0, 0.1);
 }
 
 #project .project-container {
@@ -133,7 +133,7 @@ nav a:hover::after {
 #project .project:hover {
   filter: blur(0px);
   transform: scale(1.1);
-  box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.8), -2px -2px 12px rgba(0, 0, 0, 0.8);
+  box-shadow: 2px 2px 12px grey(0, 0, 0, 0.8), -2px -2px 12px grey(0, 0, 0, 0.8);
 }
 #project .project {
   width: 250px;
@@ -143,7 +143,7 @@ nav a:hover::after {
   color: black;
   position: relative;
   flex-grow: 1;
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.8);
+  box-shadow: 0 0 8px grey(0, 0, 0, 0.8);
 }
 
 .project a {
@@ -157,12 +157,12 @@ a.link-to-github {
   right: 0;
   width: 15%;
   height: 15%;
-  background-color: rgba(164, 74, 63, 0.9);
+  background-color: grey(164, 74, 63, 0.9);
   border-bottom-left-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: -2px 3px 3px rgba(0, 0, 0, 0.8);
+  box-shadow: -2px 3px 3px grey(0, 0, 0, 0.8);
 }
 
 a.link-to-github:hover {
@@ -177,6 +177,13 @@ a.link-to-github:hover {
 }
 #contact h2 {
   margin: 0;
+  font-size: 3rem;
+  /* text-transform: uppercase; */
+  text-shadow: 1px 1px grey, 2px 2px grey, 3px 3px grey, 4px 4px grey,
+    5px 5px grey, 6px 6px grey, 7px 7px grey, 8px 8px grey, 9px 9px grey,
+    10px 10px grey, 11px 11px 15px rgba(0, 0, 0, 0.5);
+  transform: skew(-5deg, -5deg) rotate(5deg);
+  transform-origin: center center;
 }
 #contact p {
   margin: 0 0 20px;
@@ -229,7 +236,7 @@ footer i {
   #project .project:hover {
     filter: none;
     transform: none;
-    box-shadow: 0 0 8px rgba(0, 0, 0, 0.8);
+    box-shadow: 0 0 8px grey(0, 0, 0, 0.8);
   }
   /* end remove blur effect */
 }
