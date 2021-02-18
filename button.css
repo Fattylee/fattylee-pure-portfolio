@@ -1,0 +1,64 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  /* background-color: red; */
+  text-align: center;
+  --btn-thickness: 32px;
+}
+
+.threedee-btn {
+  font-size: 4rem;
+  padding: 20px 34px;
+  position: relative;
+  border: none;
+  cursor: pointer;
+  outline: none;
+
+  box-shadow: calc(-1 * var(--btn-thickness)) var(--btn-thickness) purple;
+}
+.threedee-btn::after,
+.threedee-btn::before {
+  content: "";
+  height: 0;
+  width: 0;
+  position: absolute;
+  border: calc(var(--btn-thickness)) solid transparent;
+  border-right-color: purple;
+  border-left-width: 0;
+  top: 0;
+  left: calc(-1 * var(--btn-thickness));
+}
+
+.threedee-btn::before {
+  left: auto;
+  top: auto;
+  border-right-color: transparent;
+  border-top-color: purple;
+  border-bottom-width: 0;
+  bottom: calc(-1 * var(--btn-thickness));
+  right: 0;
+}
+
+.threedee-btn:active {
+  transform: translate(
+    calc(var(--btn-thickness) / -2),
+    calc(var(--btn-thickness) / 2)
+  );
+  box-shadow: calc(-1 * var(--btn-thickness) / 2) calc(var(--btn-thickness) / 2)
+    rgb(102, 1, 102);
+}
+
+.threedee-btn:active::before {
+  bottom: calc(-0.5 * var(--btn-thickness));
+  border: calc(var(--btn-thickness) / 2) solid transparent;
+  border-top-color: purple;
+  border-bottom-width: 0;
+}
+
+.threedee-btn:active::after {
+  left: calc(-0.5 * var(--btn-thickness));
+  border: calc(var(--btn-thickness) / 2) solid transparent;
+  border-right-color: purple;
+  border-left-width: 0;
+}
