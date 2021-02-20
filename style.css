@@ -177,13 +177,6 @@ a.link-to-github:hover {
 }
 #contact h2 {
   margin: 0;
-  font-size: 3rem;
-  /* text-transform: uppercase; */
-  text-shadow: 1px 1px grey, 2px 2px grey, 3px 3px grey, 4px 4px grey,
-    5px 5px grey, 6px 6px grey, 7px 7px grey, 8px 8px grey, 9px 9px grey,
-    10px 10px grey, 11px 11px 15px rgba(0, 0, 0, 0.5);
-  transform: skew(-5deg, -5deg) rotate(5deg);
-  transform-origin: center center;
 }
 #contact p {
   margin: 0 0 20px;
