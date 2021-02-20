@@ -6,7 +6,9 @@
   text-align: center;
   --btn-thickness: 32px;
 }
-
+p {
+  margin-bottom: 50px;
+}
 .threedee-btn {
   font-size: 4rem;
   padding: 20px 34px;
@@ -61,4 +63,52 @@
   border: calc(var(--btn-thickness) / 2) solid transparent;
   border-right-color: purple;
   border-left-width: 0;
+}
+
+.parent {
+  --box: 120px;
+  display: flex;
+  flex-wrap: wrap;
+  height: 50vh;
+  background-color: powderblue;
+  justify-content: space-evenly;
+  align-content: center;
+}
+.parent > div {
+  width: var(--box);
+  height: var(--box);
+  background-color: palevioletred;
+  /* -webkit-clip-path: 50% at 50% 50%; */
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+img {
+  position: relative;
+  text-transform: uppercase;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.8rem;
+  /* display: inline-block; */
+  margin: 0 0 40px 0;
+}
+img::after {
+  content: "" attr(alt) " not found";
+  display: inherit;
+  width: 100%;
+  min-width: 200px;
+  border: 1px dotted;
+  padding: 10px 20px 10px 45px;
+  background-image: url("./header-bg.jpg");
+  background-size: 10%;
+  background-repeat: no-repeat;
+  background-position: 15px 10px;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: white;
+  z-index: 1;
 }
