@@ -157,12 +157,12 @@ a.link-to-github {
   right: 0;
   width: 15%;
   height: 15%;
-  background-color: grey(164, 74, 63, 0.9);
+  background-color: rgba(164, 74, 63, 0.9);
   border-bottom-left-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: -2px 3px 3px grey(0, 0, 0, 0.8);
+  box-shadow: -2px 3px 3px rgba(0, 0, 0, 0.7);
 }
 
 a.link-to-github:hover {
