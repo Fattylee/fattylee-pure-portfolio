@@ -93,6 +93,7 @@ img {
   font-size: 0.8rem;
   /* display: inline-block; */
   margin: 0 0 40px 0;
+  width: 100%;
 }
 img::after {
   content: "" attr(alt) " not found";
