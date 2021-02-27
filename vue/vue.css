@@ -1,0 +1,7 @@
+.clicked {
+  padding: 10px 20px;
+  background-color: blueviolet;
+}
+.clicked a {
+  color: white;
+}

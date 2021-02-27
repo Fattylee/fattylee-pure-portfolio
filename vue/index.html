@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vue Starter Kit</title>
+    <link rel="stylesheet" href="./vue.css" />
   </head>
   <body>
     <div id="app">
@@ -12,6 +13,43 @@
         My name is <small style="color: palevioletred">{{name}}</small>, I'm age
         {{age}}, a software dev. from Ogun state
       </h1>
+      <p>{{'Hi there'}}</p>
+      <p>{{true}}</p>
+      <p>{{JSON.stringify({sex:'male'})}}</p>
+      <p>{{[2,3,4,{name:'stella'}]}}</p>
+      <p>
+        <code>[1,2,3,4].reduce((prev,cur)=>prev+cur)</code> =
+        {{[1,2,3,4].reduce((prev,cur)=>prev+cur)}}
+      </p>
+      <p>Methos invocation: {{sum(' - fakers')}}</p>
+      <p v-bind:title="name" style="background-color: peru">
+        The next paragraph
+        <button v-on:click="alert">Click me</button>
+      </p>
+      <!-- <input
+        type="text"
+        v-on:keyup.enter.space.shift.meta="keyPressed"
+        placeholder="Enter some keys"
+      /> -->
+      <input
+        type="text"
+        v-on:keyup.enter.control.ctrl="keyPressed"
+        placeholder="Enter some keys"
+      />
+      <output>{{result}}</output>
+      <div class="clicked" v-on:click="clickMe">
+        <button v-on:click.once="clickMe">Click me</button>
+        <a
+          href="./index.html"
+          target="_blank"
+          rel="noopener noreferrer"
+          v-on:click.prevent.stop="clickMe"
+          >Goto my portfolio</a
+        >
+      </div>
+      <form v-on:submit.prevent="submitForm" action="abc">
+        <input type="text" /><input type="submit" value="Submit" />
+      </form>
     </div>
     <script src="./vue.js"></script>
     <script src="./index.js"></script>
