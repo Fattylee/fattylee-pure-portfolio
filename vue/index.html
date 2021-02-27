@@ -33,7 +33,7 @@
       /> -->
       <input
         type="text"
-        v-on:keyup.enter.control.ctrl="keyPressed"
+        v-on:keyup.enter.control="result = $event.target.value"
         placeholder="Enter some keys"
       />
       <output>{{result}}</output>
@@ -50,6 +50,9 @@
       <form v-on:submit.prevent="submitForm" action="abc">
         <input type="text" /><input type="submit" value="Submit" />
       </form>
+      <input type="text" placeholder="two-data-binding" v-model.number="age" />
+      <br />
+      <output>{{age+10}}</output>
     </div>
     <script src="./vue.js"></script>
     <script src="./index.js"></script>
