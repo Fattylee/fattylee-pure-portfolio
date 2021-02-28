@@ -4,6 +4,9 @@ new Vue({
     name:'abu adnaan',
     age:33,
     result:'',
+    isVisible:true,
+    names:['abdullah','fattylee','habhiyolah'],
+    employees:[{name:'abullah',salary:234},{name:'fattylee',salary:983},{name:'lukman',salary:333}],
   },
   methods:{
     sum(factor){

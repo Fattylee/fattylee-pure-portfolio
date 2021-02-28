@@ -47,12 +47,44 @@
           >Goto my portfolio</a
         >
       </div>
+      <!-- <form v-on:submit.prevent action=""> -->
+      <input
+        v-on:keydown.enter="names.push($event.target.value);$event.target.value=''"
+        type="text"
+        placeholder="add a new name"
+      />
+      <!-- </form> -->
+      <form>
+        <input type="email" name="" id="" multiple />
+      </form>
+      <table border="1">
+        <thead>
+          <tr>
+            <th>S/N</th>
+            <th>Name</th>
+            <th>Salary</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="(emp,index) in employees">
+            <td>{{index+1}}</td>
+            <td>{{emp.name}}</td>
+            <td>{{emp.salary}}</td>
+          </tr>
+        </tbody>
+      </table>
+      <ol>
+        <li v-html="name" v-for="name in names">{{name}}</li>
+      </ol>
       <form v-on:submit.prevent="submitForm" action="abc">
         <input type="text" /><input type="submit" value="Submit" />
       </form>
       <input type="text" placeholder="two-data-binding" v-model.number="age" />
       <br />
-      <output>{{age+10}}</output>
+      <button v-on:click="isVisible =!isVisible">Toggle</button
+      ><output>{{age+10}}</output>
+      <p v-show="isVisible">Show this</p>
+      <p v-if="isVisible">Show only - add/remove from the DOM</p>
     </div>
     <script src="./vue.js"></script>
     <script src="./index.js"></script>
