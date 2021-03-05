@@ -181,6 +181,7 @@ a.link-to-github:hover {
   margin: 0;
 }
 #contact p {
+  padding-top: 10px;
   margin: 0 0 20px;
 }
 
@@ -191,6 +192,7 @@ a.link-to-github:hover {
   list-style: none;
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
 }
 #contact ul a {
   color: white;
@@ -202,6 +204,35 @@ a.link-to-github:hover {
   width: 50px;
   height: 50px;
   margin: 10px;
+  display: inline-block;
+  transition: border 0.2s;
+}
+
+#contact ul a:hover {
+  border-width: 0;
+  border-bottom-width: 5px;
+  border-bottom-color: #a44a3f;
+}
+
+.cv-parent {
+  height: 100px;
+}
+
+.cv {
+  text-transform: capitalize;
+  margin-top: 40px;
+  display: inline-block;
+  text-decoration: none;
+  color: white;
+  font-size: 1.6rem;
+  border: 1px solid white;
+  padding: 10px 15px;
+  transition: all 0.2s;
+}
+.cv:hover {
+  border-width: 0;
+  border-bottom-width: 5px;
+  border-bottom-color: #a44a3f;
 }
 
 footer {
@@ -230,7 +261,7 @@ footer i {
   }
   #project .project:hover {
     filter: none;
-    transform: none;
+    /* transform: none; */
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.8);
   }
   /* end remove blur effect */
