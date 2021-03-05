@@ -1,6 +1,10 @@
 new Vue({
   el:'#app',
   data:{
+    myStyle:{
+background:'pink',
+last:'purple'
+    },
     name:'abu adnaan',
     age:33,
     result:'',
@@ -15,9 +19,15 @@ new Vue({
       {name:'Operating Systems',sub:['macOS.js','Linux','Windows']}
     ],
   },
+  computed:{
+  },
   methods:{
+    calculateHex(value){
+  console.log(value)
+  return '#'+this.myStyle.last
+},
     sum(factor=0){
-      alert('Computing sum')
+      // alert('Computing sum')
       return this.age+factor;
     },
     alert(){
