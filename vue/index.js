@@ -7,9 +7,17 @@ new Vue({
     isVisible:true,
     names:['abdullah','fattylee','habhiyolah'],
     employees:[{name:'abullah',salary:234},{name:'fattylee',salary:983},{name:'lukman',salary:333}],
+    password:'',
+
+    categories:[
+      {name:'Javascript',sub:['Vue.js','React','Angular2']},
+      {name:'Databases',sub:['MySQL','PostgreSQL','MariaDB']},
+      {name:'Operating Systems',sub:['macOS.js','Linux','Windows']}
+    ],
   },
   methods:{
-    sum(factor){
+    sum(factor=0){
+      alert('Computing sum')
       return this.age+factor;
     },
     alert(){

@@ -21,7 +21,7 @@
         <code>[1,2,3,4].reduce((prev,cur)=>prev+cur)</code> =
         {{[1,2,3,4].reduce((prev,cur)=>prev+cur)}}
       </p>
-      <p>Methos invocation: {{sum(' - fakers')}}</p>
+      <p>Methods invocation: {{sum(2)}}</p>
       <p v-bind:title="name" style="background-color: peru">
         The next paragraph
         <button v-on:click="alert">Click me</button>
@@ -85,8 +85,61 @@
       ><output>{{age+10}}</output>
       <p v-show="isVisible">Show this</p>
       <p v-if="isVisible">Show only - add/remove from the DOM</p>
+
+      <input type="checkbox" v-on:click="isVisible=!isVisible" />
+      <input
+        v-model="password"
+        v-bind:type="isVisible?'text':'password'"
+        placeholder="Enter password"
+      />
+      output: {{password}}
+      <p v-if="password.length>8">
+        Awesome! Your password is longer than 8 characters.
+      </p>
+      <p v-else-if="password.length>0">Please enter a longer password</p>
+      <p v-else>Please enter a password</p>
+
+      <ol>
+        <li v-for="category in categories">
+          {{category.name}}
+          <ul>
+            <li v-for="sub in category.sub">{{sub}}</li>
+          </ul>
+        </li>
+      </ol>
     </div>
     <script src="./vue.js"></script>
     <script src="./index.js"></script>
+
+    <div id="parentElement">
+      <span id="childElement">foo bar</span>
+    </div>
+
+    <script>
+      // Create the new node to insert
+      let newNode = document.createElement("div");
+      newNode.innerHTML = "So sweet";
+
+      // Get a reference to the parent node
+      let parentDiv = document.getElementById("childElement").parentNode;
+
+      // Begin test case [ 1 ] : Existing childElement (all works correctly)
+      let sp2 = document.getElementById("childElement");
+      const clonedSp2 = sp2.cloneNode(true);
+      // clonedSp2.textContent = "just a clone";
+      parentDiv.insertBefore(newNode, sp2);
+      parentDiv.appendChild(clonedSp2);
+      // End test case [ 1 ]
+
+      // Begin test case [ 2 ] : childElement is of Type undefined
+      sp2 = undefined; // Non-existent node of id "childElement"
+      // parentDiv.insertBefore(newNode, sp2); // Implicit dynamic cast to type Node
+      // End test case [ 2 ]
+
+      // Begin test case [ 3 ] : childElement is of Type "undefined" ( string )
+      sp2 = "undefined"; // Non-existent node of id "childElement"
+      // parentDiv.insertBefore(newNode, sp2); // Generates "Type Error: Invalid Argument"
+      // End test case [ 3 ]
+    </script>
   </body>
 </html>
