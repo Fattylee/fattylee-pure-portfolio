@@ -12,12 +12,13 @@ Experienced Software Engineer with a demonstrated history of working in the info
 
 ## Features
 
-Below are the features of my Fattylee-web-services app
+Below are the features of my Fattylee-pure-portfolio app
 
 User should be able to view most recent project<br/>
 User should be able to link to the production app<br/>
 User should be able to have a direct link to the github page of each project<br/>
 User should be able to contact the developer via social links, email and phone<br/>
+User should be able to Download or View developer CV<br/>
 
 ## Technologies and Languages
 
