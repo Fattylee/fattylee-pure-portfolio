@@ -129,6 +129,7 @@ nav a:hover::after {
 }
 #project img {
   width: 100%;
+  min-height: 183px;
 }
 #project .project:hover {
   filter: blur(0px);
@@ -140,6 +141,7 @@ nav a:hover::after {
   margin: 10px;
   transition: transform 0.3s ease;
   text-decoration: none;
+  text-transform: capitalize;
   color: black;
   position: relative;
   flex-grow: 1;
@@ -246,7 +248,16 @@ footer i {
   margin: 0 5px;
 }
 
+@media screen and (max-width: 904px) {
+  #project img {
+    min-height: 277px;
+  }
+}
+
 @media screen and (max-width: 539px) {
+  #project img {
+    min-height: auto;
+  }
   #project .project {
     max-width: 80%;
   }
