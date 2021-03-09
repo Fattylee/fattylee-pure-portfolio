@@ -3,23 +3,32 @@
 * {
   box-sizing: border-box;
 }
+:root {
+  /* --primary-color-transparent: #a44a3fe6; */
+  /* --primary-color: #a44a3f; */
+  --primary-color-transparent: #dc143ce6;
+  --primary-color: crimson;
+  --secondary-color: #040404;
+  --body-color: #eee;
+}
 
 html {
   scroll-behavior: smooth;
 }
 body {
   font-family: "Lato", Arial, Helvetica, sans-serif;
-  background-color: rgb(246, 244, 210);
+  background-color: var(--body-color);
   margin: 0;
-  /* primary: rgb(164, 74, 63); */
-  /* secondary: rgb(241, 156, 121); */
+}
+
+.max-width {
+  max-width: 900px;
+  margin: auto;
+  /* padding: 0 80px; */
 }
 
 nav {
-  background-color: rgba(164, 74, 63, 0.9);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  background-color: var(--primary-color-transparent);
   color: white;
   padding: 0 20px;
   position: fixed;
@@ -30,11 +39,17 @@ nav {
 
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
 }
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 50px;
+}
 nav a {
-  margin-left: 15px;
   color: white;
   text-decoration: none;
   position: relative;
+  margin-left: 15px;
 }
 
 nav a::after {
@@ -60,6 +75,7 @@ nav a:hover::after {
   background-image: url(./header-bg.jpg);
   background-size: cover;
   background-position: center center;
+  background-attachment: fixed;
   position: relative;
   color: white;
   text-align: center;
@@ -159,7 +175,7 @@ a.link-to-github {
   right: 0;
   width: 15%;
   height: 15%;
-  background-color: rgba(164, 74, 63, 0.9);
+  background-color: var(--primary-color);
   border-bottom-left-radius: 50%;
   display: flex;
   align-items: center;
@@ -169,13 +185,13 @@ a.link-to-github {
 
 a.link-to-github:hover {
   background-color: rgb(246, 244, 210);
-  color: rgba(164, 74, 63, 0.9);
-  border: 0.5px solid rgba(164, 74, 63, 0.9);
+  color: var(--primary-color);
+  border: 0.5px solid var(--primary-color);
 }
 
 #contact {
   text-align: center;
-  background: rgb(241, 156, 121);
+  background: var(--secondary-color);
   padding: 30px 20px;
   color: white;
 }
@@ -188,7 +204,7 @@ a.link-to-github:hover {
 }
 
 #contact ul {
-  margin: 0;
+  margin: auto;
   margin-top: 50px;
   padding: 0;
   list-style: none;
@@ -197,11 +213,11 @@ a.link-to-github:hover {
   flex-wrap: wrap;
 }
 #contact ul a {
-  color: white;
+  color: var(--body-color);
   font-size: 30px;
   text-decoration: none;
   padding: 10px;
-  border-radius: 50%;
+  clip-path: circle();
   border: solid 1px;
   width: 50px;
   height: 50px;
@@ -213,7 +229,7 @@ a.link-to-github:hover {
 #contact ul a:hover {
   border-width: 0;
   border-bottom-width: 5px;
-  border-bottom-color: #a44a3f;
+  border-bottom-color: var(--primary-color);
 }
 
 .cv-parent {
@@ -234,23 +250,26 @@ a.link-to-github:hover {
 .cv:hover {
   border-width: 0;
   border-bottom-width: 5px;
-  border-bottom-color: #a44a3f;
+  border-bottom-color: var(--primary-color);
 }
 
 footer {
-  background-color: rgb(164, 74, 63);
+  background-color: var(--primary-color);
   padding: 20px;
   text-align: center;
   color: white;
 }
 footer i {
-  color: red;
+  color: var(--body-color);
   margin: 0 5px;
 }
 
 @media screen and (max-width: 904px) {
   #project img {
     min-height: 277px;
+  }
+  .nav {
+    padding: 0 30px;
   }
 }
 
@@ -260,6 +279,9 @@ footer i {
   }
   #project .project {
     max-width: 80%;
+  }
+  #contact ul {
+    max-width: 345px;
   }
 
   /* start remove blur effect */
@@ -276,4 +298,9 @@ footer i {
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.8);
   }
   /* end remove blur effect */
+}
+@media screen and (max-width: 450px) {
+  .nav {
+    padding: 0 15px;
+  }
 }
