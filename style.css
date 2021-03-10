@@ -1,10 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap");
 
-@font-face {
-  font-family: Redressed;
-  src: url(/Redressed/Redressed-Regular.ttf);
-}
-
 * {
   box-sizing: border-box;
 }
@@ -53,12 +48,13 @@ nav {
 }
 nav a.branding {
   margin-left: 0;
-  font-size: 1.5rem;
+  font-size: 2rem;
   text-shadow: -0.25px -1px #603cdc, -0.5px -1.5px #603cdc, -0.75px -2px #603cdc,
     -0.85px -2.25px #603cdc, -0.95px -2.5px #603cdc, -1px -3px 4px #603cdc;
   font-family: "Redressed";
 }
 nav a {
+  font-size: 1.5rem;
   color: white;
   text-decoration: none;
   position: relative;
@@ -315,5 +311,11 @@ footer i {
 @media screen and (max-width: 450px) {
   .nav {
     padding: 0 15px;
+  }
+  nav a {
+    font-size: 1rem;
+  }
+  nav a.branding {
+    font-size: 1.5rem;
   }
 }
