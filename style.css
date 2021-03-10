@@ -1,13 +1,19 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap");
 
+@font-face {
+  font-family: Redressed;
+  src: url(/Redressed/Redressed-Regular.ttf);
+}
+
 * {
   box-sizing: border-box;
 }
+
 :root {
-  /* --primary-color-transparent: #a44a3fe6; */
-  /* --primary-color: #a44a3f; */
-  --primary-color-transparent: #dc143ce6;
-  --primary-color: crimson;
+  /* --primary-color-transparent: #dc143ce6;
+  --primary-color: crimson; */
+  --primary-color-transparent: #081431e6;
+  --primary-color: #081431;
   --secondary-color: #040404;
   --body-color: #eee;
 }
@@ -15,6 +21,7 @@
 html {
   scroll-behavior: smooth;
 }
+
 body {
   font-family: "Lato", Arial, Helvetica, sans-serif;
   background-color: var(--body-color);
@@ -24,7 +31,6 @@ body {
 .max-width {
   max-width: 900px;
   margin: auto;
-  /* padding: 0 80px; */
 }
 
 nav {
@@ -44,6 +50,13 @@ nav {
   align-items: center;
   justify-content: space-between;
   padding: 0 50px;
+}
+nav a.branding {
+  margin-left: 0;
+  font-size: 1.5rem;
+  text-shadow: -0.25px -1px #603cdc, -0.5px -1.5px #603cdc, -0.75px -2px #603cdc,
+    -0.85px -2.25px #603cdc, -0.95px -2.5px #603cdc, -1px -3px 4px #603cdc;
+  font-family: "Redressed";
 }
 nav a {
   color: white;
@@ -72,7 +85,7 @@ nav a:hover::after {
 
 #about {
   height: 100vh;
-  background-image: url(./header-bg.jpg);
+  background-image: url(/images/about-bg.jpg);
   background-size: cover;
   background-position: center center;
   background-attachment: fixed;
