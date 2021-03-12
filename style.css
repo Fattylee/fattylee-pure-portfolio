@@ -29,7 +29,6 @@ body {
 }
 
 nav {
-  background-color: var(--primary-color-transparent);
   color: white;
   padding: 0 20px;
   position: fixed;
@@ -38,6 +37,10 @@ nav {
   right: 0;
   z-index: 100;
 
+  transition: background-color 0.5s ease-in, box-shadow 0.2s 0.5s linear;
+}
+.nav-bg {
+  background-color: var(--primary-color-transparent);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
 }
 .nav {
@@ -58,7 +61,7 @@ nav a {
   color: white;
   text-decoration: none;
   position: relative;
-  margin-left: 15px;
+  margin-left: 50px;
 }
 
 nav a::after {
@@ -113,8 +116,32 @@ nav a:hover::after {
   margin: 0;
 }
 
-#about h1 {
+#about .greetings {
+  display: inline-block;
   font-size: 60px;
+  letter-spacing: 20px;
+  animation: slideIn 1s ease-in;
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translateY(-100px);
+    opacity: 0;
+  }
+  70% {
+    transform: translateY(10px);
+  }
+  80% {
+    transform: translateY(-5px);
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+#about p {
+  font-weight: normal;
+  font-size: 20px;
 }
 #about p:first-of-type {
   font-size: 30px;
@@ -124,6 +151,40 @@ nav a:hover::after {
   max-width: 700px;
   margin-top: 20px;
   line-height: 2rem;
+  position: relative;
+}
+
+.blink {
+  animation: blink 0.6s infinite;
+}
+#about p:last-child::after {
+  content: "";
+  height: 100%;
+  width: 100%;
+  background: var(--primary-color-transparent);
+  background: linear-gradient(
+    to bottom,
+    var(--primary-color-transparent) 40%,
+    var(--primary-color) 50%
+  );
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  animation: slideDown 2.5s 5s ease-in forwards;
+}
+
+@keyframes blink {
+  to {
+    opacity: 0;
+  }
+}
+@keyframes slideDown {
+  to {
+    opacity: 0;
+    top: 100%;
+    height: 0%;
+  }
 }
 
 #project {
@@ -189,15 +250,21 @@ a.link-to-github {
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: -2px 3px 3px rgba(0, 0, 0, 0.7);
+  transition: all 0.3s ease-out;
 }
 
 a.link-to-github:hover {
   background-color: rgb(246, 244, 210);
   color: var(--primary-color);
   border: 0.5px solid var(--primary-color);
+  box-shadow: -3px 10px 20px #000000cc;
+  transform: translateY(-3px);
 }
 
+a.link-to-github:active:hover {
+  box-shadow: -1px 5px 10px #000000cc;
+  transform: translateY(-1px);
+}
 #contact {
   text-align: center;
   background: var(--secondary-color);
@@ -282,7 +349,28 @@ footer i {
   }
 }
 
+@media screen and (max-width: 577px) {
+  nav a {
+    margin-left: 15px;
+  }
+}
 @media screen and (max-width: 539px) {
+  nav a {
+    margin-left: 15px;
+  }
+  #about .greetings {
+    font-size: 40px;
+    letter-spacing: 10px;
+  }
+  #about p {
+    font-size: 16px;
+  }
+  #about p:first-of-type {
+    font-size: 25px;
+  }
+  #project h2 {
+    font-size: 35px;
+  }
   #project img {
     min-height: auto;
   }
@@ -308,7 +396,7 @@ footer i {
   }
   /* end remove blur effect */
 }
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 472px) {
   .nav {
     padding: 0 15px;
   }
