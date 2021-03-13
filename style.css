@@ -5,10 +5,9 @@
 }
 
 :root {
-  /* --primary-color-transparent: #dc143ce6;
-  --primary-color: crimson; */
   --primary-color-transparent: #081431e6;
   --primary-color: #081431;
+  --primary-color-light: #153d9e;
   --secondary-color: #040404;
   --body-color: #eee;
 }
@@ -157,6 +156,7 @@ nav a:hover::after {
 .blink {
   animation: blink 0.6s infinite;
 }
+
 #about p:last-child::after {
   content: "";
   height: 100%;
@@ -238,7 +238,7 @@ nav a:hover::after {
   color: black;
   text-decoration: none;
 }
-a.link-to-github {
+.link-to-github {
   color: rgb(246, 244, 210);
   position: absolute;
   top: 0;
@@ -253,7 +253,7 @@ a.link-to-github {
   transition: all 0.3s ease-out;
 }
 
-a.link-to-github:hover {
+.link-to-github:hover {
   background-color: rgb(246, 244, 210);
   color: var(--primary-color);
   border: 0.5px solid var(--primary-color);
@@ -261,10 +261,11 @@ a.link-to-github:hover {
   transform: translateY(-3px);
 }
 
-a.link-to-github:active:hover {
+.link-to-github:active:hover {
   box-shadow: -1px 5px 10px #000000cc;
   transform: translateY(-1px);
 }
+
 #contact {
   text-align: center;
   background: var(--secondary-color);
@@ -305,7 +306,7 @@ a.link-to-github:active:hover {
 #contact ul a:hover {
   border-width: 0;
   border-bottom-width: 5px;
-  border-bottom-color: var(--primary-color);
+  border-bottom-color: var(--primary-color-light);
 }
 
 .cv-parent {
@@ -322,13 +323,39 @@ a.link-to-github:active:hover {
   border: 1px solid white;
   padding: 10px 15px;
   transition: all 0.2s;
+  position: relative;
+  z-index: 2;
+  background-color: black;
+}
+.cv::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: var(--secondary-color);
+  transition: all 0.2s;
+  z-index: -1;
+}
+.cv:hover::after {
+  background-color: var(--body-color);
+  transform: scale(1.5, 2.6);
+  opacity: 0;
 }
 .cv:hover {
   border-width: 0;
   border-bottom-width: 5px;
-  border-bottom-color: var(--primary-color);
+  border-bottom-color: var(--primary-color-light);
+  transform: translateY(-10px);
+  box-shadow: 0 3px 6px var(--body-color), 0 4px 7px var(--body-color),
+    0 5px 9px var(--body-color), 0 6px 11px var(--body-color),
+    0 10px 20px var(--body-color);
 }
-
+.cv:active {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 10px var(--body-color);
+}
 footer {
   background-color: var(--primary-color);
   padding: 20px;
@@ -391,7 +418,6 @@ footer i {
   }
   #project .project:hover {
     filter: none;
-    /* transform: none; */
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.8);
   }
   /* end remove blur effect */
