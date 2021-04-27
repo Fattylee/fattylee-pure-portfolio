@@ -9,22 +9,31 @@
   </head>
   <body>
     <div id="app">
+      <h1 id="letter">0</h1>
+      <button id="nextLetter">Next Letter</button>
+      <p v-for="(n,index) in 10">{{n}}: {{index}}</p>
+      <p v-once>my name: {{name}}</p>
+      <button @click="name='lulu'">Change name</button>
       <h1>
         My name is <small style="color: palevioletred">{{name}}</small>, I'm age
         {{age}}, a software dev. from Ogun state
       </h1>
-      <p>{{'Hi there'}}</p>
-      <p>{{true}}</p>
-      <p>{{JSON.stringify({sex:'male'})}}</p>
-      <p>{{[2,3,4,{name:'stella'}]}}</p>
-      <p>
-        <code>[1,2,3,4].reduce((prev,cur)=>prev+cur)</code> =
-        {{[1,2,3,4].reduce((prev,cur)=>prev+cur)}}
-      </p>
+
+      <li v-for="emp in employees">{{emp.name}}</li>
+
+      <h1>
+        <button @click="shuffle()" :style="{fontSize:'inherit'}">
+          Shuffle name
+        </button>
+      </h1>
       <p>Methods invocation: {{sum(2)}}</p>
       <p v-bind:title="name" style="background-color: peru">
         The next paragraph
-        <button v-on:click="num=44;alert(numu)">Click me</button>
+        <button
+          v-on:click="num=44;num=Math.floor(Math.random()*100);clickMe(num)"
+        >
+          Click me
+        </button>
       </p>
       <!-- <input
         type="text"
@@ -73,9 +82,9 @@
           </tr>
         </tbody>
       </table>
-      <ol>
+      <ul>
         <li v-html="name" v-for="name in names">{{name}}</li>
-      </ol>
+      </ul>
       <form v-on:submit.prevent="submitForm" action="abc">
         <input type="text" /><input type="submit" value="Submit" />
       </form>
@@ -121,8 +130,129 @@
           mollitia.
         </div>
       </div>
+      <!-- 
+        v-on:click.meta.enter.space.prevent.stop='methodName[()]'
+        v-bind:href='dataName'
+        v-model.number.trim='dataName'
+        v-once // render the tag only once
+        v-html='dataName' // <div v-html='html'></div>
+        v-if='boolean exp'
+        v-else-if='boolean exp'
+        v-else='boolean exp'
+        v-show='booleanExp'
+        v-cloak  // use css attribute selector to hide it: [v-cloak] used to hide string interpolation from the user
+        v-for='(name,index) in dataProp' // loop
+        v-for='(value,propertyName) in dataObject' <li v-for='() in dataType'>{{}}</li>
+        v-for='n in 10'
+       -->
     </div>
-    <script src="./vue.js"></script>
-    <script src="./index.js"></script>
+    <p onclick="changeAll(event,'34',true)">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur,
+      repellat?
+    </p>
+    <script>
+      const changeAll = (e, num, bool) => {
+        console.log(event, num, bool);
+        console.log(e);
+      };
+
+      const letters = [
+        "a",
+        "b",
+        "c",
+        "d",
+        "e",
+        "f",
+        "g",
+        "h",
+        "i",
+        "j",
+        "k",
+        "l",
+        "m",
+        "n",
+        "o",
+        "p",
+        "q",
+        "r",
+        "s",
+        "t",
+        "u",
+        "v",
+        "w",
+        "x",
+        "y",
+        "z",
+      ];
+      // console.log(letters.splice(0, 1));
+      console.log(letters.length);
+      console.table(letters);
+
+      const displayLetter = (mutateArr) => {
+        if (!mutateArr.length) {
+          document.querySelector("#letter").innerHTML = "Thank You!!";
+          return;
+        }
+        console.log(mutateArr);
+        document.querySelector("#letter").innerHTML = mutateArr.splice(0, 1)[0];
+      };
+      const shuffleArray = (originalArr) => {
+        const copy = [...originalArr];
+        const newArr = [];
+
+        for (let index = 0, length = copy.length; index < length; index++) {
+          const randomIndex = Math.floor(Math.random() * copy.length);
+          const deleted = copy.splice(randomIndex, 1)[0];
+          newArr.push(deleted);
+        }
+        return newArr;
+      };
+
+      const shuffledArr = shuffleArray(letters);
+      document
+        .querySelector("#nextLetter")
+        .addEventListener("click", displayLetter.bind(null, shuffledArr));
+
+      console.table(shuffledArr);
+
+      console.log("After....");
+
+      console.table(letters);
+    </script>
+    <!-- <script src="./vue.js"></script> -->
+    <!-- <script src="./index.js"></script> --)>
+  </body>
+</html>
+
+<!-- :root {
+    --blue: #007bff;
+    --indigo: #6610f2;
+    --purple: #6f42c1;
+    --pink: #e83e8c;
+    --red: #dc3545;
+    --orange: #fd7e14;
+    --yellow: #ffc107;
+    --green: #28a745;
+    --teal: #20c997;
+    --cyan: #17a2b8;
+    --white: #fff;
+    --gray: #6c757d;
+    --gray-dark: #343a40;
+    --primary: #007bff;
+    --secondary: #6c757d;
+    --success: #28a745;
+    --info: #17a2b8;
+    --warning: #ffc107;
+    --danger: #dc3545;
+    --light: #f8f9fa;
+    --dark: #343a40;
+    --breakpoint-xs: 0;
+    --breakpoint-sm: 576px;
+    --breakpoint-md: 768px;
+    --breakpoint-lg: 992px;
+    --breakpoint-xl: 1200px;
+    --font-family-sans-serif: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+    --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+} -->
   </body>
 </html>
